@@ -2,8 +2,7 @@ import React, { useState, useMemo } from "react";
 import { useProject } from "../store/ProjectContext";
 import type { BinderNode } from "../types";
 import { BinderRow } from "./BinderRow";
-import { wordCount } from "../lib/manifest"; // <-- Added to count total words
-
+import { wordCount } from "../lib/manifest"; 
 const STATUS_LABEL: Record<string, string> = {
   draft: "Draft",
   revised: "Revising",
@@ -109,7 +108,6 @@ export function Binder() {
         />
       </div>
 
-      {/* New Progress Widget at the bottom */}
       <ProjectProgress totalWords={totalWords} />
     </div>
   );
@@ -128,7 +126,6 @@ function ProjectProgress({ totalWords }: { totalWords: number }) {
   const next = currentIdx === -1 ? milestones[milestones.length - 1] : milestones[currentIdx];
   const prevMax = currentIdx <= 0 ? 0 : milestones[currentIdx - 1].max;
   
-  // Calculate percentage progress toward the *next* milestone
   const progressToNext = currentIdx === -1 ? 1 : (totalWords - prevMax) / (next.max - prevMax);
 
   return (
