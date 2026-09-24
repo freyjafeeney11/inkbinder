@@ -1,6 +1,7 @@
 # Inkbinder
 
-Inkbinder is a desktop application tailored specifically for writing novels. It provides a focused environment for authors to draft, manage, and organize their literary projects locally.
+Inkbinder is a desktop application tailored specifically for writing novels. It provides a focused environment to draft, manage, and organise your literary projects locally and export to PDF or epub. 
+
 <img width="1175" height="754" alt="Screenshot 2026-09-24 at 23 35 57" src="https://github.com/user-attachments/assets/4799eeeb-b749-4a4f-b592-d6e38aff113e" />
 <img width="1180" height="757" alt="Screenshot 2026-09-24 at 23 34 13" src="https://github.com/user-attachments/assets/a83d0078-84ad-48e4-9eab-fe65f1678a17" />
 <img width="1173" height="755" alt="Screenshot 2026-09-24 at 23 35 42" src="https://github.com/user-attachments/assets/dd895499-eaea-4c61-9c80-d278627843ba" />
