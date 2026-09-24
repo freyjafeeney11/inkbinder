@@ -1,10 +1,21 @@
+# frontend dependencies
 node_modules
+.yarn
+.pnp.cjs
+.pnp.loader.mjs
+
+# frontend build outputs
 dist
-dist-ssr
-*.local
+build
+out
 
-src-tauri/target
-src-tauri/Cargo.lock
+# tauri/rust build artifacts
+src-tauri/target/
 
+# environment variables (security)
+.env
+.env.local
+
+# OS generated files
 .DS_Store
-*.log
+Thumbs.db
