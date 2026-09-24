@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-ink/10;
+  }
+
+  body {
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(193, 121, 59, 0.28);
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.signal.amber");
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .paper-grain {
+    background-image: radial-gradient(rgba(34, 30, 23, 0.035) 0.6px, transparent 0.6px);
+    background-size: 3px 3px;
+  }
+
+  .dark .paper-grain {
+    background-image: radial-gradient(rgba(237, 231, 217, 0.035) 0.6px, transparent 0.6px);
+    background-size: 3px 3px;
+  }
+
+  .scrollbar-quiet {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(34, 30, 23, 0.18) transparent;
+  }
+  .scrollbar-quiet::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-quiet::-webkit-scrollbar-thumb {
+    background-color: rgba(34, 30, 23, 0.16);
+    border-radius: 999px;
+  }
+  .scrollbar-quiet::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(34, 30, 23, 0.28);
+  }
+  .dark .scrollbar-quiet::-webkit-scrollbar-thumb {
+    background-color: rgba(237, 231, 217, 0.16);
+  }
+
+  .caret-blink {
+    animation: caret-blink 1.05s steps(1) infinite;
+  }
+  @keyframes caret-blink {
+    0%, 45% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  
+  @media print {
+    @page {
+      margin-top: 0.5in;
+      margin-bottom: 1in;
+      margin-left: 1.25in;
+      margin-right: 1.25in;
+    }
+  
+    /* 2. Hide the app UI completely */
+    aside, button, [data-tauri-drag-region] {
+      display: none !important;
+    }
+  
+    html, body, #root, div, main, article, section {
+      display: block !important;
+      position: static !important;
+      height: auto !important;
+      width: auto !important;
+      max-width: none !important;
+      min-height: 0 !important;
+      max-height: none !important;
+      overflow: visible !important;
+      background: transparent !important;
+    }
+  
+    #root div {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .py-16 {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+  
+    header {
+      margin-bottom: 4rem !important;
+      text-align: center !important;
+    }
+    
+    .text-center {
+      text-align: center !important;
+      margin-bottom: 2rem !important;
+    }
+  
+    .prose-manuscript {
+      font-size: 12pt !important;
+      line-height: 2 !important;
+    }
+    
+    .prose-manuscript p {
+      margin-bottom: 1rem !important;
+      text-indent: 1.5rem !important; 
+    }
+  
+    section {
+      margin-top: 0 !important; 
+      padding-top: 0 !important;
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+
+    section:first-of-type {
+      page-break-before: avoid !important;
+      break-before: avoid !important;
+    }
+  
+    p {
+      orphans: 3;
+      widows: 3;
+    }
+  }
+}
+@page {
+  margin: 0.75in;
+}
+
+@media print {
+  html, body, #root {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
